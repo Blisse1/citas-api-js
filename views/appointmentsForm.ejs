@@ -1,0 +1,48 @@
+<%- include('header') %>
+<!-- Form appointments -->
+<form action="/api/v1/appointments" method="post">
+    <h2>Appointments creation</h2>
+    <fieldset>
+        <label for="cedula"> Cedula del Paciente:
+            <input type="number" name="cedula" required>
+        </label>
+        <label for="speciality"> Especialidad del Doctor:
+            <select  id="speciality" name="speciality" required>
+                <option value="">(seleccionar)</option>
+                <option value="medicina-general">medicina general</option>
+                <option value="cardiologia">cardiologia</option>
+                <option value="medicina-interna">medicina interna</option>
+                <option value="dermatologia">dermatologia</option>
+                <option value="rehabilitacion-fisica">rehabilitacion fisica</option>
+                <option value="psicologia">psicologia</option>
+                <option value="odontologia">odontologia</option>
+                <option value="radiologia">radiologia</option>
+            </select>
+        </label>
+        <label for="date"> Fecha:
+            <input type="date" name="date"  min="2023-07-17" max="2023-12-31" required>
+        </label>
+    </fieldset>
+    <button type="submit" name="submit">Create Appointment</button>
+</form>
+
+<form id="searchForm" method="get" action="/api/v1/appointments">
+    <label for="appointmentId"> Get an specific appointment by appointment id 
+    <input type="text" id="appointmentId" required></label>
+    <button type="submit">Find Appointment by Id</button>
+</form>
+
+<form id="searchAllForm" method="get" action="/api/v1/appointments/cedula">
+    <label for="appointmentsCedula"> Get all appointments by cedula <input type="number" id="appointmentsCedula" required></label>
+    <button type="submit">Find Appointments by Cedula</button>
+</form>
+
+<form  method="get" action="/api/v1/appointments">
+    <button type="submit">Find All Appointments</button>
+</form>
+
+
+
+<script src="/js/getAppointmentById.js"></script>
+<script src="/js/getAppointmentsById.js"></script>
+<%- include('footer') %>
