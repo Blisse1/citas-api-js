@@ -37,9 +37,6 @@
 * You cannot create a new appointment for an user that already has an appointment with the same doctor on the same day.
 * You cannot create a new appointment if the doctor for that speciality isn't registered.
 
-### YouTube video testing the app: 
-https://youtu.be/9IbaLLE3Has
-
 ## Endpoints
 * The main endpoints are:
   * localhost:3000/api/v1/patients
